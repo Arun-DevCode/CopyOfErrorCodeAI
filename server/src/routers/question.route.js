@@ -9,7 +9,7 @@ import {
 } from "../controllers/question.controller.js";
 
 import { createQuestionValidator } from "../validators/question.validator.js";
-import { validateRequest } from "../middleware/validateRequest.js";
+import validate from "../middleware/validate.js";
 
 const router = express.Router();
 
@@ -18,7 +18,7 @@ const router = express.Router();
  * @desc    Create a new question
  * @access  Private (admin)
  */
-router.post("/", createQuestionValidator, validateRequest, createQuestion);
+router.post("/", createQuestionValidator, validate, createQuestion);
 
 /**
  * @route   GET /api/questions
@@ -42,7 +42,7 @@ router.get("/:id", getQuestionById);
 router.patch(
   "/:id",
   createQuestionValidator, // can use separate update validator if needed
-  validateRequest,
+  validate,
   updateQuestion,
 );
 

@@ -14,6 +14,9 @@ config({ path: "./.env.local", debug: true }); // env loader
 
 // Import Routes
 import authRoutes from "./src/routers/auth.route.js";
+import categoryRoutes from "./src/routers/category.route.js";
+import questionRoutes from "./src/routers/question.route.js";
+
 // import userRoutes from "./src/routers/user.route.js";
 // import featureRoutes from "./src/routers/features.route.js";
 // import codeRoutes from "./src/routers/submission.route.js";
@@ -59,6 +62,8 @@ app.use(cookieParser());
 
 // Routes
 app.use("/api/auth/user", authRoutes);
+app.use("/api/v1/category", categoryRoutes); //Q:C
+app.use("/api/v1/question", questionRoutes); //Q:C
 // app.use("/api/user", userRoutes);
 // app.use("/api", featureRoutes);
 // app.use("/api", codeRoutes);
