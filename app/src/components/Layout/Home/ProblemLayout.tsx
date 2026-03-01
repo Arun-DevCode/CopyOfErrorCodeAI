@@ -1,17 +1,20 @@
 import ListProblems from "./List-Problems";
+import { Suspense } from "react";
 
 export default function Problem() {
   return (
-    <main className="max-w-[90%] mx-auto my-12 block sm:flex justify-between gap-24">
+    <main className="w-full px-12 py-12 block sm:flex justify-between gap-24 bg-gray-50">
       <section className="flex-1">
         <div className="mb-12 w-1/2">
-          <h1 className="text-4xl mb-5">Explore Coding</h1>
-          <p>
+          <h1 className="text-4xl mb-2">Explore Coding</h1>
+          <p className="text-slate-600">
             Practice coding problems and improve your problem-solving skills.
           </p>
         </div>
 
-        <ListProblems />
+        <Suspense fallback={<h1>Loading...</h1>}>
+          <ListProblems />
+        </Suspense>
       </section>
 
       <aside className="text-center w-1/4">

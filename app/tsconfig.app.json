@@ -15,7 +15,11 @@
       "@/pages/*": ["src/pages/*"],
       "@/router/*": ["src/router/*"],
       "@/store/*": ["src/store/*"],
-      "@/assets/*": ["src/assets/*"]
+      "@/assets/*": ["src/assets/*"],
+      "@/Providers/*": ["src/Providers/*"],
+      "@/Services/*": ["src/Services/*"],
+      "@/features/*": ["src/features/*"],
+
     },
 
     /* Bundler mode */

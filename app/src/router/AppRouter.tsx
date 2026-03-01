@@ -1,4 +1,4 @@
-import HomePageLayout from "@/Pages/HomePage";
+import HomePageLayout from "@/Pages/HomeScreen";
 import LoginScreen from "@/Pages/LoginScreen";
 import { createBrowserRouter, RouterProvider } from "react-router";
 
