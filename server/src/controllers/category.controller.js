@@ -11,7 +11,13 @@ export const createCategory = catchAsync(async (req, res, next) => {
     return next(new AppError("Category already exists", 409));
   }
 
-  const category = await Category.create({ name, description, slug });
+  // If slug was not provided in the request, we can dynamically generate it
+  let finalSlug = slug;
+  if (!finalSlug) {
+    finalSlug = name.toLowerCase().trim().replace(/[^\w\s-]/g, "").replace(/\s+/g, "-");
+  }
+
+  const category = await Category.create({ name, description, slug: finalSlug });
 
   res.status(201).json({
     status: "success",

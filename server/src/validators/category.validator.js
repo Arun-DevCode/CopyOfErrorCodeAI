@@ -13,6 +13,12 @@ export const createCategoryValidator = [
     .trim()
     .isLength({ max: 200 })
     .withMessage("Description cannot exceed 200 characters"),
+
+  body("slug")
+    .optional()
+    .trim()
+    .notEmpty()
+    .withMessage("Slug cannot be empty if provided"),
 ];
 
 export const updateCategoryValidator = [
