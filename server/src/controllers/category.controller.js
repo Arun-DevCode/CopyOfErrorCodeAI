@@ -14,10 +14,18 @@ export const createCategory = catchAsync(async (req, res, next) => {
   // If slug was not provided in the request, we can dynamically generate it
   let finalSlug = slug;
   if (!finalSlug) {
-    finalSlug = name.toLowerCase().trim().replace(/[^\w\s-]/g, "").replace(/\s+/g, "-");
+    finalSlug = name
+      .toLowerCase()
+      .trim()
+      .replace(/[^\w\s-]/g, "")
+      .replace(/\s+/g, "-");
   }
 
-  const category = await Category.create({ name, description, slug: finalSlug });
+  const category = await Category.create({
+    name,
+    description,
+    slug: finalSlug,
+  });
 
   res.status(201).json({
     status: "success",
@@ -108,4 +116,12 @@ export const deleteCategory = catchAsync(async (req, res, next) => {
     status: "success",
     message: "Category deleted successfully",
   });
+});
+
+export const getAllQuestionsByCategoryId = catchAsync(async () => {
+  // Request Params - Req.Params + Validation
+  // check category does exist in db?
+  // if it's then use id to get matched question from Question Model
+  // Does we have a question
+  // Send response based on previous condition
 });

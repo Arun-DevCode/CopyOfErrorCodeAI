@@ -3,7 +3,7 @@ import { Star } from "lucide-react";
 export default function Navbar() {
   const logo = "{!}";
   return (
-    <nav className="flex items-center justify-between border-b border-gray-200 bg-white px-6 py-3">
+    <nav className="flex items-center justify-between border-b border-gray-200 bg-white px-6 py-3 sticky-top">
       <div className="flex items-center space-x-8">
         <div className="flex items-center space-x-2">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-600">

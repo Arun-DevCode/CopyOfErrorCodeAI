@@ -19,7 +19,8 @@
       "@/Providers/*": ["src/Providers/*"],
       "@/Services/*": ["src/Services/*"],
       "@/features/*": ["src/features/*"],
-
+      "@/types/*": ["src/types/*"],
+      
     },
 
     /* Bundler mode */

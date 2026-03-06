@@ -46,6 +46,7 @@ export const createUserAccount = catchAsync(async (req, res, next) => {
     username,
     email,
     password: hashedPassword,
+    profilePicture: generateProfileURL,
   });
 
   // Send response
